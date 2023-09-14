@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>Recipe</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<!-- Container is to wrap everything -->
+<div id="container">
+<!-- Website Brand -->
+    <header></header>
+<!-- Main Navigation -->
+<nav>
+    <!-- <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page2.html">About Us</a></li>
+        <li><a href="page3.html">Contact Us</a></li>
+        <li>Gallery</li>
+    </ul> -->
+</nav>
+<!-- Main Content -->
+    <main>
+        <h1>Lunch or Dinner?</h1>
+        <p>Please type noon or sunset to get the recipe and click the button.</p>
+        <input type="text" id="recipetyped"><br>
+        <input type="submit" id="recipetype" value="submit" onlick="recipe()">
+       
+        <div id="recipediv">The recipe you need is : </div>
+
+        <script>
+            var time = document.getElementById("recipetype").value;
+
+            function recipe(){
+                if (time == "noon"){
+                 document.write("lunch recipe")
+                }
+                else if (time == "sunset"){
+                 document.write("dinner recipe")
+                }
+                else {
+                    document.write("Not lunch or dinner. It's breakfast!")
+                }
+            }
+        </script>
+    
+       
+    </main>
+<!-- Footer -->
+    <footer>&copy; Copyright 2023</footer>
+</div>
+<!-- End Container -->
+</body>
+</html>
