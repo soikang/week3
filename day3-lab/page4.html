@@ -25,39 +25,65 @@
     </header>
 <!-- Main Content -->
     <main>
-        <h1>My First Heading</h1>
-        <p>This is my first paragraph information</p>  
+        <h1>Photo Gallery</h1>
+        <p>Please check out our puppies that have been adopted!</p>  
         <ul id="album">
-            <!-- <li id="photo"><img src="images/winterland1.jpg"></li>
-            <li id="photo"><img src="images/winterland2.jpg"></li>
-            <li id="photo"><img src="images/winterland3.jpg"></li>
-            <li id="photo"><img src="images/winterland4.jpg"></li>
-            <li id="photo"><img src="images/winterland5.jpg"></li>
-            <li id="photo"><img src="images/winterland6.jpg"></li> -->
+            <!-- <li class="photo">
+                <img src="images/puppy1.jpg">
+                <figcaption>test 1</figcaption>
+                <div class="description"> test desc 1 </div>
+            </li>
+            <li class="photo">
+                <img src="images/puppy2.jpg">
+                <figcaption>test 2</figcaption>
+                <div class="description"> test desc 2 </div>
+            </li>
+           
+            <li class="photo"><img src="images/puppy3.jpg"></li>
+            <li class="photo"><img src="images/puppy4.jpg"></li> -->
         </ul>
     </main>
-<!-- Footer -->
-    <footer>&copy; Copyright 2023</footer>
+
 </div>
 <script>
     var photos = []; //declaring an empty array to store image element
     var fileNames = []; // declaring an empty elemtn to store iamge fiilename
     var imageList = []; // declaring an empty array to store html list that contains image
-    var image; //declaring empty variable to store the assembled image list codes
-    var openList = "<li id='photo'>" // declaring a variable to contain the open list tag
+    var openList = "<li class='photo'>" // declaring a variable to contain the open list tag
     var closeList = "</li>"; // declaring a variable to contain the close list tag
+
+    var openCaptionTag = "<figcaption>"; // declaring a variable to contain the open caption tag
+    var closeCaptionTag = "</figcaption>"; // decalring a variable to contain the close caption tag
+    var captionTexts = []; //declaring an empty array to store captions
+
+    var openDescTag = "<div class='description'>";
+    var closeDescTag = "</div>";
+    var descTexts = [];
     
-    // create a loop to create 6 images starting with index of 0
-    for (var i = 0; i < 6; i++) {
-        fileNames.push("winterland"+(i+1)); // create image filename and store in the array
-        photos.push("<img src='images/" + fileNames[i]+ ".jpg'>"); // assembling the filename into a large element
+    var image; //declaring empty variable to store the assembled image list codes
+    //create a loop to create 6 images starting with index of 0
+    for (var i = 0; i < 10; i++) {
+        // create HTML elements for images
+        fileNames.push("puppy"+(i+1)); // create image filename and store in the array
+        captionTexts.push("cute puppy "+ (i+1));
+        descTexts.push("Look at this puppy " + (i+1));
+        photos.push("<img src='images/" + fileNames[i]+ ".jpg'>" + openCaptionTag + captionTexts[i] + closeCaptionTag + openDescTag + descTexts[i] + closeDescTag); // assembling the filename into a large element
         image = openList + photos[i] + closeList; // assemble image element from previous arrays
         imageList.push(image); //store the image element code into an array 
-    }
-    // display all six images
-    document.getElementById("album").innerHTML = imageList;
 
+    }
+    //display all six images
+     document.getElementById("album").innerHTML = imageList;
+
+    // shorter version of the code below
+    // var image = [];
+    // for (var i = 0; i < 4; i++){
+    //     image = `<li id="photo"><img src="images/puppy${i + 1}.jpg"><li>`;
+    //     document.getElementById('album').innerHTML += image;
+    // }
 </script>
+<!-- Footer -->
+<footer>&copy; Copyright 2023 Rainbow Adoption Center</footer>
 <!-- End Container -->
 </body>
 </html>
