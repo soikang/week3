@@ -147,6 +147,10 @@ main img {
 }
 
 /* Gallery */
+main .photo {
+    max-width: 400px;
+}
+
 main #album .photo img{
     width: 400px;
     height: 250px;
@@ -159,19 +163,18 @@ main figcaption {
 }
 
 main .description {
-    display: none;
-}
-
-main .description:hover {
-    
+    visibility: hidden;
     position: relative;
     left: 100px;
     bottom: 200px;
     background-color: rgb(255, 255, 255, 0.5);
     padding: 20px;
     max-width: fit-content;
-
 }
+main .photo:hover .description{
+    visibility: visible;
+}
+
 
 /* contact */
 .signupinfo{
